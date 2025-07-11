@@ -1,0 +1,182 @@
+[
+  {
+    "id": "edu1",
+    "title": "Phương pháp giảng dạy hiệu quả",
+    "price": 450000,
+    "image": "https://www.pace.edu.vn/uploads/news/2023/11/1-ky-nang-su-pham-la-gi.jpg",
+    "shortDescription": "Nâng cao kỹ năng sư phạm dành cho giáo viên hiện đại.",
+    "fullDescription": "Khoá học giúp giáo viên nắm vững các kỹ thuật sư phạm, quản lý lớp học và tương tác với học sinh hiệu quả.",
+    "rating": 4.7
+  },
+  {
+    "id": "edu2",
+    "title": "Kỹ năng tạo giáo án điện tử",
+    "price": 350000,
+    "image": "https://source.unsplash.com/300x200/?education",
+    "shortDescription": "Hướng dẫn xây dựng bài giảng sinh động với công nghệ.",
+    "fullDescription": "Khóa học cung cấp công cụ và kỹ năng để thiết kế giáo án tương tác bằng PowerPoint, Canva, hoặc phần mềm chuyên dụng.",
+    "rating": 4.6
+  },
+  {
+    "id": "edu3",
+    "title": "Tâm lý học đường căn bản",
+    "price": 499000,
+    "image": "https://source.unsplash.com/300x200/?psychology",
+    "shortDescription": "Tìm hiểu tâm lý học sinh và ứng xử phù hợp.",
+    "fullDescription": "Giúp giáo viên hiểu rõ tâm lý trẻ em và học sinh để tạo môi trường học tích cực.",
+    "rating": 4.8
+  },
+  {
+    "id": "edu4",
+    "title": "Phương pháp dạy học tích cực",
+    "price": 390000,
+    "image": "https://source.unsplash.com/300x200/?students",
+    "shortDescription": "Thực hành các kỹ thuật dạy học hiện đại.",
+    "fullDescription": "Ứng dụng mô hình dạy học dự án, học nhóm, và hoạt động trải nghiệm để tăng tương tác trong lớp.",
+    "rating": 4.9
+  },
+  {
+    "id": "edu5",
+    "title": "Ứng dụng công nghệ trong lớp học",
+    "price": 550000,
+    "image": "https://source.unsplash.com/300x200/?technology,education",
+    "shortDescription": "Tích hợp công cụ số để nâng cao hiệu quả giảng dạy.",
+    "fullDescription": "Giới thiệu các phần mềm hỗ trợ giảng dạy như Kahoot, Zoom, Google Classroom, và cách sử dụng hiệu quả.",
+    "rating": 4.5
+  },
+  {
+    "id": "edu6",
+    "title": "Quản lý lớp học hiệu quả",
+    "price": 420000,
+    "image": "https://source.unsplash.com/300x200/?classroom",
+    "shortDescription": "Kỹ năng tổ chức và duy trì kỷ luật trong lớp học.",
+    "fullDescription": "Khóa học hướng dẫn cách tổ chức lớp học, xử lý mâu thuẫn và duy trì môi trường học tích cực.",
+    "rating": 4.7
+  },
+  {
+    "id": "edu7",
+    "title": "Đánh giá năng lực học sinh",
+    "price": 480000,
+    "image": "https://source.unsplash.com/300x200/?assessment",
+    "shortDescription": "Phương pháp kiểm tra và đánh giá học sinh theo năng lực.",
+    "fullDescription": "Học cách xây dựng bộ tiêu chí đánh giá, phản hồi học sinh và cải tiến phương pháp kiểm tra.",
+    "rating": 4.6
+  },
+  {
+    "id": "edu8",
+    "title": "Thiết kế bài giảng e-learning",
+    "price": 620000,
+    "image": "https://source.unsplash.com/300x200/?elearning",
+    "shortDescription": "Tạo khoá học online chuyên nghiệp và thu hút.",
+    "fullDescription": "Khóa học hướng dẫn sử dụng các nền tảng LMS như Moodle, Google Sites, cùng công cụ xây dựng video bài giảng.",
+    "rating": 4.9
+  },
+  {
+    "id": "edu9",
+    "title": "Kỹ năng giao tiếp cho giáo viên",
+    "price": 370000,
+    "image": "https://source.unsplash.com/300x200/?communication,teacher",
+    "shortDescription": "Phát triển kỹ năng truyền đạt và lắng nghe.",
+    "fullDescription": "Giáo viên học cách truyền đạt rõ ràng, xử lý tình huống và giao tiếp hiệu quả với học sinh và phụ huynh.",
+    "rating": 4.5
+  },
+  {
+    "id": "edu10",
+    "title": "Phát triển nghề nghiệp giáo viên",
+    "price": 499000,
+    "image": "https://source.unsplash.com/300x200/?career,teacher",
+    "shortDescription": "Lộ trình nâng cao kỹ năng và thăng tiến nghề nghiệp.",
+    "fullDescription": "Tư duy phát triển liên tục, cập nhật xu hướng giáo dục và quản lý thời gian hiệu quả cho giáo viên.",
+    "rating": 4.7
+  },
+  {
+    "id": "edu11",
+    "title": "Giáo dục cảm xúc và kỹ năng sống",
+    "price": 460000,
+    "image": "https://source.unsplash.com/300x200/?emotions,students",
+    "shortDescription": "Kết hợp giảng dạy với phát triển tâm lý học sinh.",
+    "fullDescription": "Trang bị kỹ năng xây dựng bài học tích hợp cảm xúc và tư duy tích cực.",
+    "rating": 4.8
+  },
+  {
+    "id": "edu12",
+    "title": "Kỹ năng dạy học trực tuyến",
+    "price": 420000,
+    "image": "https://source.unsplash.com/300x200/?online,teaching",
+    "shortDescription": "Thành thạo công cụ giảng dạy online.",
+    "fullDescription": "Hướng dẫn giáo viên quản lý lớp học trực tuyến, tương tác học sinh và đánh giá hiệu quả.",
+    "rating": 4.6
+  },
+  {
+    "id": "edu13",
+    "title": "Khóa học STEAM cho giáo viên",
+    "price": 590000,
+    "image": "https://source.unsplash.com/300x200/?steam,education",
+    "shortDescription": "Giới thiệu phương pháp dạy học STEAM hiện đại.",
+    "fullDescription": "Tích hợp Khoa học, Công nghệ, Kỹ thuật, Nghệ thuật và Toán vào bài giảng một cách sáng tạo.",
+    "rating": 4.9
+  },
+  {
+    "id": "edu14",
+    "title": "Dạy học phân hóa theo năng lực",
+    "price": 399000,
+    "image": "https://source.unsplash.com/300x200/?differentiation",
+    "shortDescription": "Thiết kế bài học phù hợp từng học sinh.",
+    "fullDescription": "Khóa học cung cấp công cụ để cá nhân hóa bài học dựa trên khả năng và sở thích người học.",
+    "rating": 4.7
+  },
+  {
+    "id": "edu15",
+    "title": "Giáo dục tích hợp kỹ thuật số",
+    "price": 480000,
+    "image": "https://source.unsplash.com/300x200/?digital,learning",
+    "shortDescription": "Kết hợp kỹ thuật số trong giảng dạy hiện đại.",
+    "fullDescription": "Tăng cường tương tác lớp học bằng công nghệ AR/VR, bảng thông minh và ứng dụng giáo dục số.",
+    "rating": 4.8
+  },
+  {
+    "id": "edu16",
+    "title": "Kỹ năng đánh giá học tập online",
+    "price": 399000,
+    "image": "https://source.unsplash.com/300x200/?quiz,online",
+    "shortDescription": "Thiết kế và chấm bài trực tuyến hiệu quả.",
+    "fullDescription": "Khóa học tập trung vào công cụ kiểm tra, chống gian lận và cung cấp phản hồi tự động.",
+    "rating": 4.5
+  },
+  {
+    "id": "edu17",
+    "title": "Tư duy thiết kế trong giáo dục",
+    "price": 520000,
+    "image": "https://source.unsplash.com/300x200/?designthinking,education",
+    "shortDescription": "Áp dụng Design Thinking vào dạy học.",
+    "fullDescription": "Hướng dẫn giáo viên giải quyết vấn đề giáo dục một cách sáng tạo, lấy học sinh làm trung tâm.",
+    "rating": 4.9
+  },
+  {
+    "id": "edu18",
+    "title": "Xây dựng môi trường học tập tích cực",
+    "price": 460000,
+    "image": "https://source.unsplash.com/300x200/?positive,classroom",
+    "shortDescription": "Phát triển văn hóa học tập tích cực.",
+    "fullDescription": "Tạo động lực học tập và tăng tính chủ động cho học sinh qua mô hình môi trường tích cực.",
+    "rating": 4.7
+  },
+  {
+    "id": "edu19",
+    "title": "Khóa học công nghệ giáo dục 4.0",
+    "price": 620000,
+    "image": "https://source.unsplash.com/300x200/?education,4.0",
+    "shortDescription": "Cập nhật xu hướng giáo dục số.",
+    "fullDescription": "Giới thiệu các nền tảng AI, phân tích dữ liệu học tập và tự động hóa trong giáo dục.",
+    "rating": 4.8
+  },
+  {
+    "id": "edu20",
+    "title": "Làm chủ Google Classroom",
+    "price": 380000,
+    "image": "https://source.unsplash.com/300x200/?google,classroom",
+    "shortDescription": "Hướng dẫn từ cơ bản đến nâng cao.",
+    "fullDescription": "Giúp giáo viên sử dụng thành thạo Google Classroom để tạo lớp, chia bài và quản lý học sinh online.",
+    "rating": 4.6
+  }
+]
