@@ -1,5 +1,6 @@
 import { Row, Col, Empty } from 'antd';
 import ProductCard from '../../components/ProductCard';
+import ProductDetails from '../products/ProductDetails';
 import type { Product } from '../../types/product';
 import { useEffect, useState, useMemo } from 'react';
 import { fetchProducts } from '../../api/productAPI';
@@ -14,6 +15,8 @@ const ProductList: React.FC<ProductListProps> = ({
   priceFilter = 'all' 
 }) => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
     fetchProducts().then(setProducts);
@@ -51,6 +54,26 @@ const ProductList: React.FC<ProductListProps> = ({
     return filtered;
   }, [products, searchTerm, priceFilter]);
 
+  const handleViewDetails = (product: Product) => {
+    setSelectedProduct(product);
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
+    setSelectedProduct(null);
+  };
+
+  const handleAddToCart = (product: Product) => {
+    // TODO: Implement add to cart functionality
+    console.log('Added to cart:', product.title);
+  };
+
+  const handleToggleFavorite = (product: Product) => {
+    // TODO: Implement favorite functionality
+    console.log('Toggled favorite:', product.title);
+  };
+
 
 
   return (
@@ -73,15 +96,27 @@ const ProductList: React.FC<ProductListProps> = ({
               sm={12}
               md={8}
               lg={6}
-              xl={4}
-              xxl={3}
+              xl={6}
+              xxl={6}
               style={{ display: 'flex', justifyContent: 'center' }}
             >
-              <ProductCard product={product} />
+              <ProductCard 
+                product={product} 
+                onViewDetails={handleViewDetails}
+              />
             </Col>
           ))}
         </Row>
       )}
+
+      {/* Product Details Modal */}
+      <ProductDetails
+        product={selectedProduct}
+        visible={isModalVisible}
+        onClose={handleCloseModal}
+        onAddToCart={handleAddToCart}
+        onToggleFavorite={handleToggleFavorite}
+      />
     </div>
   );
 };

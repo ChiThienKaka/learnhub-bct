@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Layout, Input, Select, Button, Drawer, Menu, Space, Typography, Badge } from 'antd';
-import { SearchOutlined, FilterOutlined, MenuOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { Layout, Input, Select, Button, Drawer, Menu, Space, Typography, Badge, Avatar } from 'antd';
+import { SearchOutlined, FilterOutlined, MenuOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import './Header.css';
 
 const { Header: AntHeader } = Layout;
@@ -42,6 +42,11 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
     console.log('Cart clicked');
   };
 
+  const handleUserClick = () => {
+    // TODO: Implement user functionality
+    console.log('User clicked');
+  };
+
   const menuItems = [
     { key: 'home', label: 'Trang chủ' },
     { key: 'teaching', label: 'Giảng dạy' },
@@ -67,7 +72,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
           />
         </div>
 
-        {/* Search và Filter */}
+        {/* Search, Filter, Cart, User */}
         <div className="header-center">
           <Space.Compact className="search-filter-group">
             <Search
@@ -89,7 +94,6 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
               <Option value="over1m">Trên 1 triệu</Option>
             </Select>
           </Space.Compact>
-          
           {/* Cart Button - Desktop */}
           <Badge count={cartItemCount} size="small" className="cart-badge-desktop">
             <Button
@@ -99,6 +103,15 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
               className="cart-btn"
             />
           </Badge>
+          {/* User Avatar - Desktop */}
+          <Avatar
+            icon={<UserOutlined />}
+
+            className="user-avatar"
+            onClick={handleUserClick}
+            style={{ cursor: 'pointer', marginLeft: 8 }}
+            size={25}
+          />
         </div>
 
         {/* Mobile Menu Button */}
@@ -114,23 +127,37 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
 
       {/* Mobile Drawer */}
       <Drawer
-        title="Menu"
+        title={null}
         placement="right"
         onClose={closeMobileMenu}
         open={mobileMenuVisible}
         className="mobile-drawer"
+        styles={{body: {padding: 0, display: 'flex', flexDirection: 'column', height: '100%'}}}
       >
-        <div className="mobile-search-section">
+        {/* User Avatar Section */}
+        <div className="drawer-avatar-section">
+          <Avatar
+            icon={<UserOutlined />}
+            className="user-avatar"
+            onClick={handleUserClick}
+            size={48}
+            style={{ cursor: 'pointer', margin: '16px auto 8px auto', display: 'block' }}
+          />
+          {/* <div className="drawer-username">Tên người dùng</div> */}
+        </div>
+
+        {/* Search & Filter Section */}
+        <div className="drawer-search-section">
           <Search
             placeholder="Tìm kiếm sản phẩm..."
             allowClear
             onSearch={handleSearch}
-            style={{ marginBottom: 16 }}
+            style={{ marginBottom: 12 }}
           />
           <Select
             value={priceFilter}
             onChange={handlePriceFilter}
-            style={{ width: '100%', marginBottom: 16 }}
+            style={{ width: '100%' }}
           >
             <Option value="all">Tất cả giá</Option>
             <Option value="under500k">Dưới 500K</Option>
@@ -138,21 +165,22 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
             <Option value="over1m">Trên 1 triệu</Option>
           </Select>
         </div>
-        
+
+        {/* Menu Section */}
         <Menu
           mode="vertical"
           items={menuItems}
           className="mobile-menu"
         />
-        
-        {/* Cart Button - Mobile */}
-        <div className="mobile-cart-section">
+
+        {/* Cart Button - Mobile (always at bottom) */}
+        <div className="drawer-cart-section">
           <Badge count={cartItemCount} size="small">
             <Button
               type="primary"
               icon={<ShoppingCartOutlined />}
               onClick={handleCartClick}
-              style={{ width: '100%', height: 48 }}
+              style={{ width: '100%', height: 48, fontWeight: 600, fontSize: 16 }}
             >
               Giỏ hàng ({cartItemCount})
             </Button>
