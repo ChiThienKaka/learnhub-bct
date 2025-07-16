@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Layout, Input, Select, Button, Drawer, Menu, Space, Typography, Badge, Avatar } from 'antd';
-import { SearchOutlined, FilterOutlined, MenuOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
+import { SearchOutlined,HistoryOutlined, FilterOutlined, MenuOutlined, ShoppingCartOutlined, UserOutlined, HeartFilled, HeartOutlined } from '@ant-design/icons';
 import './Header.css';
+import PopupUser from './PopupUser';
+import { useNavigate } from 'react-router-dom';
 
 const { Header: AntHeader } = Layout;
 const { Search } = Input;
@@ -18,6 +20,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [priceFilter, setPriceFilter] = useState('all');
+  const navigate = useNavigate();
 
   const handleSearch = (value: string) => {
     setSearchValue(value);
@@ -48,13 +51,33 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
   };
 
   const menuItems = [
-    { key: 'home', label: 'Trang chủ' },
+    { key: 'home', label: 'Trang chủ'},
     { key: 'teaching', label: 'Giảng dạy' },
     { key: 'courses', label: 'Khóa học' },
     { key: 'about', label: 'Giới thiệu' },
     // { key: 'contact', label: 'Liên hệ' },
   ];
-
+  const menuItemsMobile = [
+    { key: 'history', label: 'Lịch sử sản phẩm', icon:<HistoryOutlined /> },
+    { key: 'favorites', label: 'Sản phẩm yêu thích', icon: <HeartOutlined /> },
+    ...menuItems
+  ];
+  const handleClickSubMenu = (item:any):void=>{
+       switch(item.key){
+        case 'home':
+          navigate('/');
+          break
+        case 'history':
+          navigate('/history');
+          break
+        case 'favorites':
+          navigate('/favorites');
+          break
+        default:
+          console.warn(`Không tìm thấy mục phụ cho key: ${item.key}`);
+          break;
+       }
+  }
   return (
     <AntHeader className="header">
       <div className="header-container">
@@ -67,6 +90,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
           {/* Desktop Menu */}
           <Menu
             mode="horizontal"
+            onClick={handleClickSubMenu}
             items={menuItems}
             className="desktop-menu"
           />
@@ -104,6 +128,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
             />
           </Badge>
           {/* User Avatar - Desktop */}
+          <PopupUser>
           <Avatar
             icon={<UserOutlined />}
 
@@ -112,6 +137,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
             style={{ cursor: 'pointer', marginLeft: 8 }}
             size={25}
           />
+          </PopupUser>
         </div>
 
         {/* Mobile Menu Button */}
@@ -140,7 +166,7 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
             icon={<UserOutlined />}
             className="user-avatar"
             onClick={handleUserClick}
-            size={48}
+            size="large"
             style={{ cursor: 'pointer', margin: '16px auto 8px auto', display: 'block' }}
           />
           {/* <div className="drawer-username">Tên người dùng</div> */}
@@ -169,8 +195,9 @@ const Header: React.FC<HeaderProps> = ({ onSearch, onPriceFilter, cartItemCount 
         {/* Menu Section */}
         <Menu
           mode="vertical"
-          items={menuItems}
+          items={menuItemsMobile}
           className="mobile-menu"
+          onClick={handleClickSubMenu}
         />
 
         {/* Cart Button - Mobile (always at bottom) */}
